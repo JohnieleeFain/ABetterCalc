@@ -1,47 +1,42 @@
-/* TODO: 1. Add these new functions: percentage, inverse, factorial, square and square root
-2. Bootstrap it to make it pretty! 3. User can only type numbers in the display (30 max!), and the numbers are right aligned.
-4. Fix divide by 0 errors! 5. Add the ability to clear the current input, but not memory.
-6. Challenge: Add trig functions (in radian AND degree mode) 7. Extra Challenge: Add mc, m+, m-, mr butons that work!
-8. Super Challenge: Add ( and ) buttons that work! 9. Super Duper Challenge: Add exponents (negatives too!)
-*/
+
 //Global variables
-var currentInput = "0";
+var current_input = "0";
 var memory = "0";
 var operator = 0;
-var startMode = "Radian";
+var start_mode = "Radian";
 
 // Helper function for displaying the current input
 function displayCurrentInput() {
-    document.getElementById('screen').value = currentInput;
+    document.getElementById('screen').value = current_input;
 }
 // Adds a digit to the current input
 function addDigit(dig) {
     
-    if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
-        currentInput = dig;
+    if ((eval(currentInput) == 0) && (current_input.indexOf(".") == -1)) {
+        current_input = dig;
     }
     else {
-        currentInput = currentInput + dig;
+        current_input = current_input + dig;
     }
     displayCurrentInput();
 }
 // Adds a decimal to the current input
 function addDecimal() {
-    if (currentInput.length == 0) {
+    if (current_input.length == 0) {
         //no leading ".", use "0."
-        currentInput = "0.";
+        current_input = "0.";
     }
     else {
         // First make sure one doesn't exist
-        if (currentInput.indexOf(".") == -1) {
-            currentInput = currentInput + ".";
+        if (current_input.indexOf(".") == -1) {
+            current_input = current_input + ".";
         }
     }
     displayCurrentInput();
 }
 // Clears memory.
 function allClear() {
-    currentInput = "0";
+    current_input = "0";
     operator = 0; //clear operator
     memory = "0"; //clear memory
     displayCurrentInput();
@@ -61,26 +56,26 @@ function storeOperator(op) {
     if (op.indexOf("-") > -1) {
         operator = 4;
     }; // difference
-    memory = currentInput; //store value
-    currentInput = "0";
+    memory = current_input; //store value
+    current_input = "0";
     displayCurrentInput();
 }
 // Calculate using operator, the memory and what is current
 function calculate() {
     if (operator == 1) {
-        currentInput = eval(memory) * eval(currentInput);
+        current_input = eval(memory) * eval(current_input);
     };
     if (operator == 2) {
-        currentInput = eval(memory) / eval(currentInput);
-        if (currentInput == Infinity) {
-            currentInput = "ERROR: Divide by zero";
+        current_input = eval(memory) / eval(current_input);
+        if (current_input == Infinity) {
+            current_input = "ERROR: Divide by zero";
         }
     };
     if (operator == 3) {
-        currentInput = eval(memory) + eval(currentInput);
+        current_input = eval(memory) + eval(current_input);
     };
     if (operator == 4) {
-        currentInput = eval(memory) - eval(currentInput);
+        current_input = eval(memory) - eval(current_input);
     };
     operator = 0; //clear operator
     memory = "0"; //clear memory
@@ -88,71 +83,71 @@ function calculate() {
 }
 // Change the sign of the current input
 function changeSign() {
-    currentInput = (currentInput * -1);
+    current_input = (current_input * -1);
     displayCurrentInput();
 }
 // Clear the current input back to 0
 function clearCurrent() {
-    currentInput = "0";
+    current_input = "0";
     displayCurrentInput();
     console.log("calc is cleared");
 }
 // Change the current input to a percentage
 function percentage() {
-    currentInput = (currentInput / 100);
+    current_input = (current_input / 100);
     displayCurrentInput();
 }
 // Calculate the factorial of the current input
 function factorial() {
     var result = 1;
-    for (i = currentInput; i > 0 ; i--) {
+    for (i = current_input; i > 0 ; i--) {
         result = result * i;
         console.log(result);
     }
-    currentInput = result;
+    current_input = result;
     displayCurrentInput();
 }
 // Calculate the square of the current input
 function square() {
-    currentInput = currentInput*currentInput
-    currentInput = Math.sqrt(Math.pow((currentInput),2));
+    current_input = current_input*current_input
+    current_input = Math.sqrt(Math.pow((current_input),2));
     displayCurrentInput();
 }
 // Calculate the square root of the current input
 function squareRoot() {
-    currentInput = Math.sqrt(currentInput);
+    current_input = Math.sqrt(current_input);
     displayCurrentInput();
 }
 // Calculate the inverse of the current input
 function inverse() {
-    currentInput = 1/currentInput;
+    current_input = 1/current_input;
     displayCurrentInput();
 }
 // Calculate the trig identity of a given input
 function trig(sign) {
-    if(startMode == "Degree"){
-        currentInput = currentInput * (Math.PI/180)
+    if(start_mode == "Degree"){
+        current_input = current_input * (Math.PI/180)
     }
     if(sign == "sin"){
-        currentInput = Math.sin(currentInput);
+        current_input = Math.sin(current_input);
     }
     else if(sign == "cos"){
-        currentInput = Math.cos(currentInput);
+        current_input = Math.cos(current_input);
     }
     else if(sign == "tan"){
-        currentInput = Math.tan(currentInput);
+        current_input = Math.tan(current_input);
     }
     displayCurrentInput();
     
 }
 //Switch Calculator mode
 function switcher() {
-    if(startMode == "Radian"){
-        startMode = "Degree";
+    if(start_mode == "Radian") {
+        start_mode = "Degree";
         console.log("changed to degree");
     }
-    else if(startMode == "Degree"){
-        startMode = "Radian";
+    else if(start_mode == "Degree"){
+        start_mode = "Radian";
         console.log("changed to radian");
     }
 }
