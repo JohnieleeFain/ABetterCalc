@@ -4,17 +4,30 @@
 6. Challenge: Add trig functions (in radian AND degree mode) 7. Extra Challenge: Add mc, m+, m-, mr butons that work!
 8. Super Challenge: Add ( and ) buttons that work! 9. Super Duper Challenge: Add exponents (negatives too!)
 */
-//Global variables
+
+
+/**
+* These are the Global variables
+*/
+
 var currentInput = "0";
 var memory = "0";
 var operator = 0;
 var startMode = "Radian";
 
-// Helper function for displaying the current input
+/**
+Helper function for displaying the current input
+@param {function} displayCurrentInput Displays the number inputted
+@param {string} 'screen'   id of element to display the number
+*/
 function displayCurrentInput() {
     document.getElementById('screen').value = currentInput;
 }
-// Adds a digit to the current input
+/** 
+Adds a digit to the current input
+@param {function} addDigit Adds a digit in the calc
+@return {number} Returns the result
+*/ 
 function addDigit(dig) {
     
     if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
@@ -25,7 +38,11 @@ function addDigit(dig) {
     }
     displayCurrentInput();
 }
-// Adds a decimal to the current input
+/**
+ *Adds a decimal to the current input 
+ *@param {function} addDecimal ads a decimal to number
+ *@returns {number} Returns the result
+*/
 function addDecimal() {
     if (currentInput.length == 0) {
         //no leading ".", use "0."
@@ -86,23 +103,38 @@ function calculate() {
     memory = "0"; //clear memory
     displayCurrentInput();
 }
-// Change the sign of the current input
+
+/**
+ *  Changes the sign of the current input
+ *  @author Jorie Allen 
+ * @param {function} changeSign changes the sign
+ * @returns {number}  Reurns and displays the result                  
+ */
 function changeSign() {
     currentInput = (currentInput * -1);
     displayCurrentInput();
 }
-// Clear the current input back to 0
+/**
+ */
 function clearCurrent() {
     currentInput = "0";
     displayCurrentInput();
     console.log("calc is cleared");
 }
-// Change the current input to a percentage
+/**
+ * Change the current input to a percentage
+ * @author Jorie Allan
+ * @param {function} percantage  Makes the number into a percantage
+ * @returns {number} Returns and siplays the result
+*/
 function percentage() {
     currentInput = (currentInput / 100);
     displayCurrentInput();
 }
-// Calculate the factorial of the current input
+/**
+ * Calculate the factorial of the current input
+ * @param {function} factorial 
+*/
 function factorial() {
     var result = 1;
     for (i = currentInput; i > 0 ; i--) {
@@ -123,12 +155,23 @@ function squareRoot() {
     currentInput = Math.sqrt(currentInput);
     displayCurrentInput();
 }
-// Calculate the inverse of the current input
+/**
+ * Calculate the inverse of the current input
+ * @author Andrea Martinez
+ * @param {function}inverse Changes number to its inverse
+ * @returns {number} Returns and displays the result
+ */
 function inverse() {
     currentInput = 1/currentInput;
     displayCurrentInput();
 }
-// Calculate the trig identity of a given input
+/**
+ *Calculate the trig identity of a given input
+ * @author Johnie lee Fain
+ *@param {function} trig Calulates the trig  idnetity of a number
+ *@returns {number} Returns and silapys thge result
+
+*/
 function trig(sign) {
     if(startMode == "Degree"){
         currentInput = currentInput * (Math.PI/180)
