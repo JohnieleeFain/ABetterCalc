@@ -105,7 +105,7 @@ function percentage() {
 // Calculate the factorial of the current input
 function factorial() {
     var result = 1;
-    for (i = currentInput; i > 0 ; i--) {
+    for (i = currentInput; i > 0; i--) {
         result = result * i;
         console.log(result);
     }
@@ -130,16 +130,16 @@ function inverse() {
 }
 // Calculate the trig identity of a given input
 function trig(sign) {
-    if(startMode == "Degree"){
+    if(startMode == "Degree") {
         currentInput = currentInput * (Math.PI/180)
     }
-    if(sign == "sin"){
+    if(sign == "sin") {
         currentInput = Math.sin(currentInput);
     }
-    else if(sign == "cos"){
+    else if(sign == "cos") {
         currentInput = Math.cos(currentInput);
     }
-    else if(sign == "tan"){
+    else if(sign == "tan") {
         currentInput = Math.tan(currentInput);
     }
     displayCurrentInput();
@@ -147,11 +147,11 @@ function trig(sign) {
 }
 //Switch Calculator mode
 function switcher() {
-    if(startMode == "Radian"){
+    if(startMode == "Radian") {
         startMode = "Degree";
         console.log("changed to degree");
     }
-    else if(startMode == "Degree"){
+    else if(startMode == "Degree") {
         startMode = "Radian";
         console.log("changed to radian");
     }
