@@ -168,12 +168,12 @@ function switcher() {
     else if(start_mode == "Degree"){
         start_mode = "Radian";
 =======
-    if(startMode == "Radian") {
-        startMode = "Degree";
+    if(start_mode == "Radian") {
+        start_mode = "Degree";
         console.log("changed to degree");
     }
-    else if(startMode == "Degree") {
-        startMode = "Radian";
+    else if(start_mode == "Degree") {
+        start_mode = "Radian";
 >>>>>>> Origin/master
         console.log("changed to radian");
     }
