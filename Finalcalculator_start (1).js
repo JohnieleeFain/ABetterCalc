@@ -1,22 +1,8 @@
-<<<<<<< HEAD
-/* TODO: 1. Add these new functions: percentage, inverse, factorial, square and square root
-2. Bootstrap it to make it pretty! 3. User can only type numbers in the display (30 max!), and the numbers are right aligned.
-4. Fix divide by 0 errors! 5. Add the ability to clear the current input, but not memory.
-6. Challenge: Add trig functions (in radian AND degree mode) 7. Extra Challenge: Add mc, m+, m-, mr butons that work!
-8. Super Challenge: Add ( and ) buttons that work! 9. Super Duper Challenge: Add exponents (negatives too!)
-*/
-
 
 /**
 * These are the Global variables
 */
-
-var currentInput = "0";
-=======
-
-//Global variables
 var current_input = "0";
->>>>>>> origin/master
 var memory = "0";
 var operator = 0;
 var start_mode = "Radian";
