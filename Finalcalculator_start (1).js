@@ -96,7 +96,7 @@ function storeOperator(op) {
 }
 /**
  *Calculate using operator, the memory and what is current
- * @param
+ * @param {function} calculate
  */
 function calculate() {
     if (operator == 1) {
