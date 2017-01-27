@@ -1,5 +1,7 @@
 
-//Global variables
+/**
+* These are the Global variables
+*/
 var current_input = "0";
 var memory = "0";
 var operator = 0;
