@@ -157,11 +157,7 @@ function percentage() {
 */
 function factorial() {
     var result = 1;
-<<<<<<< HEAD
     for (i = current_input; i > 0 ; i--) {
-=======
-    for (i = currentInput; i > 0; i--) {
->>>>>>> Origin/master
         result = result * i;
         console.log(result);
     }
@@ -204,7 +200,6 @@ function inverse() {
 
 */
 function trig(sign) {
-<<<<<<< HEAD
     if(start_mode == "Degree"){
         current_input = current_input * (Math.PI/180)
     }
@@ -216,19 +211,6 @@ function trig(sign) {
     }
     else if(sign == "tan"){
         current_input = Math.tan(current_input);
-=======
-    if(startMode == "Degree") {
-        currentInput = currentInput * (Math.PI/180)
-    }
-    if(sign == "sin") {
-        currentInput = Math.sin(currentInput);
-    }
-    else if(sign == "cos") {
-        currentInput = Math.cos(currentInput);
-    }
-    else if(sign == "tan") {
-        currentInput = Math.tan(currentInput);
->>>>>>> Origin/master
     }
     displayCurrentInput();
     
@@ -240,21 +222,12 @@ function trig(sign) {
   * @return {number} Returns the result
  */
 function switcher() {
-<<<<<<< HEAD
     if(start_mode == "Radian") {
         start_mode = "Degree";
         console.log("changed to degree");
     }
     else if(start_mode == "Degree"){
         start_mode = "Radian";
-=======
-    if(start_mode == "Radian") {
-        start_mode = "Degree";
-        console.log("changed to degree");
-    }
-    else if(start_mode == "Degree") {
-        start_mode = "Radian";
->>>>>>> Origin/master
         console.log("changed to radian");
     }
 }
