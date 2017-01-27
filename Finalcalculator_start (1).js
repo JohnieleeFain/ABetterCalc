@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* TODO: 1. Add these new functions: percentage, inverse, factorial, square and square root
 2. Bootstrap it to make it pretty! 3. User can only type numbers in the display (30 max!), and the numbers are right aligned.
 4. Fix divide by 0 errors! 5. Add the ability to clear the current input, but not memory.
@@ -11,9 +12,14 @@
 */
 
 var currentInput = "0";
+=======
+
+//Global variables
+var current_input = "0";
+>>>>>>> origin/master
 var memory = "0";
 var operator = 0;
-var startMode = "Radian";
+var start_mode = "Radian";
 
 /**
 Helper function for displaying the current input
@@ -21,7 +27,7 @@ Helper function for displaying the current input
 @param {string} 'screen'   id of element to display the number
 */
 function displayCurrentInput() {
-    document.getElementById('screen').value = currentInput;
+    document.getElementById('screen').value = current_input;
 }
 /** 
 Adds a digit to the current input
@@ -30,11 +36,11 @@ Adds a digit to the current input
 */ 
 function addDigit(dig) {
     
-    if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
-        currentInput = dig;
+    if ((eval(currentInput) == 0) && (current_input.indexOf(".") == -1)) {
+        current_input = dig;
     }
     else {
-        currentInput = currentInput + dig;
+        current_input = current_input + dig;
     }
     displayCurrentInput();
 }
@@ -44,27 +50,33 @@ function addDigit(dig) {
  *@returns {number} Returns the result
 */
 function addDecimal() {
-    if (currentInput.length == 0) {
+    if (current_input.length == 0) {
         //no leading ".", use "0."
-        currentInput = "0.";
+        current_input = "0.";
     }
     else {
         // First make sure one doesn't exist
-        if (currentInput.indexOf(".") == -1) {
-            currentInput = currentInput + ".";
+        if (current_input.indexOf(".") == -1) {
+            current_input = current_input + ".";
         }
     }
     displayCurrentInput();
 }
-// Clears memory.
+/**
+ * @param {function}allClear Clears all memory
+ * @returns {number} Retursn and display the results
+ */
 function allClear() {
-    currentInput = "0";
+    current_input = "0";
     operator = 0; //clear operator
     memory = "0"; //clear memory
     displayCurrentInput();
     console.log("memory is cleared");
 }
-// Stores the last operator pushed for multiply, divide, add, or subtract.
+/**
+ * @param {function}storeoperator Stores the last operator pushed for multiply, divide, add, or subtract.
+ @returns {number} returns and displays the reslut of the input
+ */
 function storeOperator(op) {
     if (op.indexOf("") > -1) {
         operator = 1;
@@ -78,26 +90,29 @@ function storeOperator(op) {
     if (op.indexOf("-") > -1) {
         operator = 4;
     }; // difference
-    memory = currentInput; //store value
-    currentInput = "0";
+    memory = current_input; //store value
+    current_input = "0";
     displayCurrentInput();
 }
-// Calculate using operator, the memory and what is current
+/**
+ *Calculate using operator, the memory and what is current
+ * @param
+ */
 function calculate() {
     if (operator == 1) {
-        currentInput = eval(memory) * eval(currentInput);
+        current_input = eval(memory) * eval(current_input);
     };
     if (operator == 2) {
-        currentInput = eval(memory) / eval(currentInput);
-        if (currentInput == Infinity) {
-            currentInput = "ERROR: Divide by zero";
+        current_input = eval(memory) / eval(current_input);
+        if (current_input == Infinity) {
+            current_input = "ERROR: Divide by zero";
         }
     };
     if (operator == 3) {
-        currentInput = eval(memory) + eval(currentInput);
+        current_input = eval(memory) + eval(current_input);
     };
     if (operator == 4) {
-        currentInput = eval(memory) - eval(currentInput);
+        current_input = eval(memory) - eval(current_input);
     };
     operator = 0; //clear operator
     memory = "0"; //clear memory
@@ -111,13 +126,16 @@ function calculate() {
  * @returns {number}  Reurns and displays the result                  
  */
 function changeSign() {
-    currentInput = (currentInput * -1);
+    current_input = (current_input * -1);
     displayCurrentInput();
 }
 /**
+*@author Johnie Lee Fain & Jorie Allen
+ *@param {Function}clearCurren Clears the current input
+ *@return {number} Returns and siplay the results
  */
 function clearCurrent() {
-    currentInput = "0";
+    current_input = "0";
     displayCurrentInput();
     console.log("calc is cleared");
 }
@@ -128,31 +146,44 @@ function clearCurrent() {
  * @returns {number} Returns and siplays the result
 */
 function percentage() {
-    currentInput = (currentInput / 100);
+    current_input = (current_input / 100);
     displayCurrentInput();
 }
 /**
  * Calculate the factorial of the current input
- * @param {function} factorial 
+ * @author Johnie Lee Fain
+ * @param {function} factorial of the number
+ * @returns {number} Returnsd and displays the results
 */
 function factorial() {
     var result = 1;
-    for (i = currentInput; i > 0 ; i--) {
+<<<<<<< HEAD
+    for (i = current_input; i > 0 ; i--) {
+=======
+    for (i = currentInput; i > 0; i--) {
+>>>>>>> Origin/master
         result = result * i;
         console.log(result);
     }
-    currentInput = result;
+    current_input = result;
     displayCurrentInput();
 }
-// Calculate the square of the current input
+/**
+ * Calculate the square of the current input
+ * @author Andrea Martinez
+ * @param {function}sqaure Finds the square of the number inputted.
+*/ 
 function square() {
-    currentInput = currentInput*currentInput
-    currentInput = Math.sqrt(Math.pow((currentInput),2));
+    current_input = current_input*current_input
+    current_input = Math.sqrt(Math.pow((current_input),2));
     displayCurrentInput();
 }
-// Calculate the square root of the current input
+/**
+ * @author Andrea Martinez
+ * @param {function} sqaureRoot Calculates the square root of the input
+ */
 function squareRoot() {
-    currentInput = Math.sqrt(currentInput);
+    current_input = Math.sqrt(current_input);
     displayCurrentInput();
 }
 /**
@@ -162,40 +193,68 @@ function squareRoot() {
  * @returns {number} Returns and displays the result
  */
 function inverse() {
-    currentInput = 1/currentInput;
+    current_input = 1/current_input;
     displayCurrentInput();
 }
 /**
  *Calculate the trig identity of a given input
  * @author Johnie lee Fain
  *@param {function} trig Calulates the trig  idnetity of a number
- *@returns {number} Returns and silapys thge result
+ *@returns {number} Returns and displays thge result
 
 */
 function trig(sign) {
-    if(startMode == "Degree"){
-        currentInput = currentInput * (Math.PI/180)
+<<<<<<< HEAD
+    if(start_mode == "Degree"){
+        current_input = current_input * (Math.PI/180)
     }
     if(sign == "sin"){
-        currentInput = Math.sin(currentInput);
+        current_input = Math.sin(current_input);
     }
     else if(sign == "cos"){
-        currentInput = Math.cos(currentInput);
+        current_input = Math.cos(current_input);
     }
     else if(sign == "tan"){
+        current_input = Math.tan(current_input);
+=======
+    if(startMode == "Degree") {
+        currentInput = currentInput * (Math.PI/180)
+    }
+    if(sign == "sin") {
+        currentInput = Math.sin(currentInput);
+    }
+    else if(sign == "cos") {
+        currentInput = Math.cos(currentInput);
+    }
+    else if(sign == "tan") {
         currentInput = Math.tan(currentInput);
+>>>>>>> Origin/master
     }
     displayCurrentInput();
     
 }
-//Switch Calculator mode
+/**
+ * Switches the mode of the calculator
+ * @author Johnie Lee Fain & Andrea Martinez
+ * @param {function}switcher Switch to degree and Radian
+  * @return {number} Returns the result
+ */
 function switcher() {
-    if(startMode == "Radian"){
-        startMode = "Degree";
+<<<<<<< HEAD
+    if(start_mode == "Radian") {
+        start_mode = "Degree";
         console.log("changed to degree");
     }
-    else if(startMode == "Degree"){
-        startMode = "Radian";
+    else if(start_mode == "Degree"){
+        start_mode = "Radian";
+=======
+    if(start_mode == "Radian") {
+        start_mode = "Degree";
+        console.log("changed to degree");
+    }
+    else if(start_mode == "Degree") {
+        start_mode = "Radian";
+>>>>>>> Origin/master
         console.log("changed to radian");
     }
 }
