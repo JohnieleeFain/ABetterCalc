@@ -15,14 +15,14 @@ Helper function for displaying the current input
 function displayCurrentInput() {
     document.getElementById('screen').value = current_input;
 }
-/** 
+/**
 Adds a digit to the current input
 @param {function} addDigit Adds a digit in the calc
 @return {number} Returns the result
-*/ 
+*/
 function addDigit(dig) {
-    
-    if ((eval(currentInput) == 0) && (current_input.indexOf(".") == -1)) {
+
+    if ((eval(current_input) == 0) && (current_input.indexOf(".") == -1)) {
         current_input = dig;
     }
     else {
@@ -31,7 +31,7 @@ function addDigit(dig) {
     displayCurrentInput();
 }
 /**
- *Adds a decimal to the current input 
+ *Adds a decimal to the current input
  *@param {function} addDecimal ads a decimal to number
  *@returns {number} Returns the result
 */
@@ -66,7 +66,7 @@ function allClear() {
 function storeOperator(op) {
     if (op.indexOf("") > -1) {
         operator = 1;
-    }; //codes for 
+    }; //codes for
     if (op.indexOf("/") > -1) {
         operator = 2;
     }; // slash (divide)
@@ -107,9 +107,9 @@ function calculate() {
 
 /**
  *  Changes the sign of the current input
- *  @author Jorie Allen 
+ *  @author Jorie Allen
  * @param {function} changeSign changes the sign
- * @returns {number}  Reurns and displays the result                  
+ * @returns {number}  Reurns and displays the result
  */
 function changeSign() {
     current_input = (current_input * -1);
@@ -154,7 +154,7 @@ function factorial() {
  * Calculate the square of the current input
  * @author Andrea Martinez
  * @param {function}sqaure Finds the square of the number inputted.
-*/ 
+*/
 function square() {
     current_input = current_input*current_input
     current_input = Math.sqrt(Math.pow((current_input),2));
@@ -199,7 +199,7 @@ function trig(sign) {
         current_input = Math.tan(current_input);
     }
     displayCurrentInput();
-    
+
 }
 /**
  * Switches the mode of the calculator

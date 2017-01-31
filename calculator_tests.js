@@ -1,5 +1,6 @@
 // Test for inputing digits
 QUnit.test( "Add digits test", function( assert ) {
+    clearCurrent();
     addDigit('1');
     addDigit('2');
     assert.equal(document.getElementById("screen").value, "12", "Passed - Expected 12");
@@ -7,6 +8,7 @@ QUnit.test( "Add digits test", function( assert ) {
 
 // Test adding one, then two decimals
 QUnit.test( "Add decimal test", function( assert ) {
+    clearCurrent();
     addDecimal();
     addDigit('2');
     addDecimal();
