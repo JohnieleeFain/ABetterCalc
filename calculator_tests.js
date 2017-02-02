@@ -25,10 +25,16 @@ QUnit.test( "Calculate the factorial test", function( assert ) {
 
 //Test for calculating the trig identity of a current input
 QUnit.test( "Calculate the trig identity test", function( assert ) {
+    //radians
     clearCurrent();
     addDigit('3');
     addDigit('0');
     switcher();
     trig("sin");
-    assert.equal(document.getElementById("screen").value, "0.49999999999999994", "Passed - Expected .5");
+    assert.equal(document.getElementById("screen").value, "0.49999999999999994", "Passed - Expected 0.5");
+    clearCurrent();
+    addDigit('3');
+    addDigit('0');
+    trig("cos");
+    assert.equal(document.getElementById("screen").value, "0.8660254037844387", "Passed - Expected 0.8660254037844387");
 });
