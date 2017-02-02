@@ -25,7 +25,7 @@ QUnit.test( "Calculate the factorial test", function( assert ) {
 
 //Test for calculating the trig identity of a current input
 QUnit.test( "Calculate the trig identity test", function( assert ) {
-    //radians
+    //Degree Mode
     clearCurrent();
     addDigit('3');
     addDigit('0');
@@ -37,4 +37,9 @@ QUnit.test( "Calculate the trig identity test", function( assert ) {
     addDigit('0');
     trig("cos");
     assert.equal(document.getElementById("screen").value, "0.8660254037844387", "Passed - Expected 0.8660254037844387");
+    clearCurrent();
+    addDigit('3');
+    addDigit('0');
+    trig("tan");
+    assert.equal(document.getElementById("screen").value, "0.5773502691896257", "Passed - Expected 0.5773502691896257");
 });
