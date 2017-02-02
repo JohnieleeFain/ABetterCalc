@@ -42,4 +42,21 @@ QUnit.test( "Calculate the trig identity test", function( assert ) {
     addDigit('0');
     trig("tan");
     assert.equal(document.getElementById("screen").value, "0.5773502691896257", "Passed - Expected 0.5773502691896257");
+    //Radian Mode
+    clearCurrent();
+    addDigit('3');
+    addDigit('0');
+    switcher();
+    trig("sin");
+    assert.equal(document.getElementById("screen").value, "-0.9880316240928618", "Passed - Expected -0.9880316240928618");
+    clearCurrent();
+    addDigit('3');
+    addDigit('0');
+    trig("cos");
+    assert.equal(document.getElementById("screen").value, "0.15425144988758405", "Passed - Expected 0.15425144988758405");
+    clearCurrent();
+    addDigit('3');
+    addDigit('0');
+    trig("tan");
+    assert.equal(document.getElementById("screen").value, "-6.405331196646276", "Passed - Expected -6.405331196646276");
 });
