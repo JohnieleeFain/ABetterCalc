@@ -12,25 +12,28 @@ QUnit.test("Add decimal test", function (assert) {
     addDecimal();
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
+//Test adding the inverse of the current input
 QUnit.test("find inverse test", function (assert) {
     clearCurrent();
     addDigit('4')
     inverse();
     assert.equal(document.getElementById("screen").value, "0.25", "Passed - Expected 0.25");
 });
+//Test to calculate the squareRoot of the current input
 QUnit.test("Calculate squareRoot test", function (assert) {
     clearCurrent();
     addDigit('4');
     squareRoot();
     assert.equal(document.getElementById("screen").value, "2", "Passed - Expected 2");
 });
+//Test to find the square of the current input
 QUnit.test("Solve square test", function (assert) {
     clearCurrent();
     addDigit('2');
     square();
     assert.equal(document.getElementById("screen").value, "4", "Passed - Expected 4");
 });
-
+// Test for calculating the factorial of a current input
 QUnit.test( "Calculate the factorial test", function( assert ) {
     clearCurrent();
     addDigit('4');
