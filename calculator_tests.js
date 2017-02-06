@@ -13,21 +13,28 @@ QUnit.test("Add decimal test", function (assert) {
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
 QUnit.test("find inverse test", function (assert) {
+    clearCurrent();
     addDigit('4')
-    inverse(current_input);
-    assert.equal(document.getElementById("screen").value, "0.20", "Passed - Expected 0.20");
-    current_input = "0";
+    inverse();
+    assert.equal(document.getElementById("screen").value, "0.25", "Passed - Expected 0.25");
 });
-
 QUnit.test("Calculate squareRoot test", function (assert) {
+    clearCurrent();
     addDigit('4');
-    squareRoot(current_input);
+    squareRoot();
     assert.equal(document.getElementById("screen").value, "2", "Passed - Expected 2");
-    current_input = "0";
 });
 QUnit.test("Solve square test", function (assert) {
+    clearCurrent();
     addDigit('2');
-    square(current_input);
+    square();
     assert.equal(document.getElementById("screen").value, "4", "Passed - Expected 4");
-     current_input = "0";
 });
+
+
+ QUnit.test("Calculate the factorial test", function (assert) {
+    clearCurrent();
+    addDigit('4');
+    factorial();
+    assert.equal(document.getElementById("screen").value, "24", "Passed - Expected 24");
+ });
