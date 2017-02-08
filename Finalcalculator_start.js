@@ -8,17 +8,18 @@ var operator = 0;
 var start_mode = "Radian";
 
 /**
-Helper function for displaying the current input
-@param {function} displayCurrentInput Displays the number inputted
-@param {string} 'screen'   id of element to display the number
+ * Helper function for displaying the current input
+ * @param {string} 'screen'  id of element to display the number
+ * @throws
 */
 function displayCurrentInput() {
     document.getElementById('screen').value = current_input;
 }
 /**
-Adds a digit to the current input
-@param {function} addDigit Adds a digit in the calc
-@return {number} Returns the result
+ * Adds a digit to the current input
+ * @param {boolean} addDigit Adds a digit in the calc
+ * @return {number} Returns the result
+ * @throws
 */
 function addDigit(dig) {
 
@@ -31,9 +32,10 @@ function addDigit(dig) {
     displayCurrentInput();
 }
 /**
- *Adds a decimal to the current input
- *@param {function} addDecimal ads a decimal to number
- *@returns {number} Returns the result
+ * Adds a decimal to the current input
+ * @param {boolean} addDecimal adds a decimal to number
+ * @returns {number} Returns the result
+ * @throws
 */
 function addDecimal() {
     if (current_input.length == 0) {
@@ -49,8 +51,10 @@ function addDecimal() {
     displayCurrentInput();
 }
 /**
- * @param {function}allClear Clears all memory
+ * Clears the current input
+ * @param {number}allClear Clears all memory
  * @returns {number} Retursn and display the results
+ * @throws
  */
 function allClear() {
     current_input = "0";
@@ -60,8 +64,10 @@ function allClear() {
     console.log("memory is cleared");
 }
 /**
- * @param {function}storeoperator Stores the last operator pushed for multiply, divide, add, or subtract.
- @returns {number} returns and displays the reslut of the input
+ * Stores the last operatr used for the input
+ * @param {boolean}storeoperator Stores the last operator pushed for multiply, divide, add, or subtract.
+ * @returns {number} returns and displays the reslut of the input
+ * @throws
  */
 function storeOperator(op) {
     if (op.indexOf("") > -1) {
@@ -81,8 +87,10 @@ function storeOperator(op) {
     displayCurrentInput();
 }
 /**
- *Calculate using operator, the memory and what is current
- * @param {function} calculate
+ * Calculate using operator, the memory and what is current
+ * @param {boolean} calculate Finds the memory of what is inputted
+ * @retunrs {string} Returns the result
+ * @throws
  */
 function calculate() {
     if (operator == 1) {
@@ -106,19 +114,22 @@ function calculate() {
 }
 
 /**
- *  Changes the sign of the current input
- *  @author Jorie Allen
- * @param {function} changeSign changes the sign
+ * Changes the sign of the current input
+ * @author Jorie Allen
+ * @param {number} changeSign changes the sign
  * @returns {number}  Reurns and displays the result
+ * @throws
  */
 function changeSign() {
     current_input = (current_input * -1);
     displayCurrentInput();
 }
 /**
-*@author Johnie Lee Fain & Jorie Allen
- *@param {Function}clearCurren Clears the current input
- *@return {number} Returns and siplay the results
+ * This functions clears the inputted numbers
+ * @author Johnie Lee Fain & Jorie Allen
+ * @param {number}clearCurrent Clears the current input
+ * @return {number} Returns and siplay the results
+ * @throws
  */
 function clearCurrent() {
     current_input = "0";
@@ -128,8 +139,9 @@ function clearCurrent() {
 /**
  * Change the current input to a percentage
  * @author Jorie Allan
- * @param {function} percantage  Makes the number into a percantage
+ * @param {number} percantage  Makes the number into a percantage
  * @returns {number} Returns and siplays the result
+ * @throws
 */
 function percentage() {
     current_input = (current_input / 100);
@@ -138,8 +150,9 @@ function percentage() {
 /**
  * Calculate the factorial of the current input
  * @author Johnie Lee Fain
- * @param {function} factorial of the number
+ * @param {number} factorial of the number
  * @returns {number} Returnsd and displays the results
+ * @throws
 */
 function factorial() {
     var result = 1;
@@ -153,7 +166,8 @@ function factorial() {
 /**
  * Calculate the square of the current input
  * @author Andrea Martinez
- * @param {function}sqaure Finds the square of the number inputted.
+ * @param {number}sqaure Finds the square of the number inputted.
+ * @throws
 */
 function square() {
     current_input = current_input*current_input
@@ -162,7 +176,8 @@ function square() {
 }
 /**
  * @author Andrea Martinez
- * @param {function} sqaureRoot Calculates the square root of the input
+ * @param {number} sqaureRoot Calculates the square root of the input
+ * @throws
  */
 function squareRoot() {
     current_input = Math.sqrt(current_input);
@@ -171,18 +186,20 @@ function squareRoot() {
 /**
  * Calculate the inverse of the current input
  * @author Andrea Martinez
- * @param {function}inverse Changes number to its inverse
+ * @param {number}inverse Changes number to its inverse
  * @returns {number} Returns and displays the result
+ * @throws
  */
 function inverse() {
     current_input = 1/current_input;
     displayCurrentInput();
 }
 /**
- *Calculate the trig identity of a given input
+ * Calculate the trig identity of a given input
  * @author Johnie lee Fain
- *@param {function} trig Calulates the trig  idnetity of a number
- *@returns {number} Returns and displays thge result
+ * @param {boolean} trig Calulates the trig  idnetity of a number
+ * @returns {number} Returns and displays thge result
+ * @throws
 
 */
 function trig(sign) {
@@ -204,8 +221,9 @@ function trig(sign) {
 /**
  * Switches the mode of the calculator
  * @author Johnie Lee Fain & Andrea Martinez
- * @param {function}switcher Switch to degree and Radian
-  * @return {number} Returns the result
+ * @param {boolean}switcher Switch to degree and Radian
+ * @return {number} Returns the result
+ * @throws
  */
 function switcher() {
     if(start_mode == "Radian") {

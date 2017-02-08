@@ -40,6 +40,7 @@ QUnit.test( "Calculate the factorial test", function( assert ) {
     factorial();
     assert.equal(document.getElementById("screen").value, "24", "Passed - Expected 24");
  });
+
 //Test for calculating the trig identity of a current input
 QUnit.test( "Calculate the trig identity test", function( assert ) {
     //Degree Mode
