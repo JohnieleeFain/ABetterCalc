@@ -78,4 +78,9 @@ QUnit.test( "Calculate the trig identity test", function( assert ) {
     trig("tan");
     assert.equal(document.getElementById("screen").value, "-6.405331196646276", "Passed - Expected -6.405331196646276");
 });
-
+QUnit.test(" Change Sign test", function (assert) {
+clearCurrent();
+addDigit('3');
+changeSign();
+assert.equal( document.getElementById ("screen").value, "-3", "passed - expected -3");
+});
