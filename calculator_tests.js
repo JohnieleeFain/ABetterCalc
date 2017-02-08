@@ -84,3 +84,8 @@ addDigit('3');
 changeSign();
 assert.equal( document.getElementById ("screen").value, "-3", "passed - expected -3");
 });
+QUnit.test(" percentage test", function (assert) {
+   clearCurrent();
+
+assert.equal( document.getElementById ("screen").value, "0", "passed - expected ");
+});
