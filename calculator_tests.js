@@ -78,4 +78,20 @@ QUnit.test( "Calculate the trig identity test", function( assert ) {
     trig("tan");
     assert.equal(document.getElementById("screen").value, "-6.405331196646276", "Passed - Expected -6.405331196646276");
 });
+// Test for calculator mode
+QUnit.test( "Switch Calculator Mode", function( assert ) {
+    //Radian
+    clearCurrent();
+    addDigit('3');
+    addDigit('0');
+    trig("sin");
+    assert.equal(document.getElementById("screen").value, "-0.9880316240928618", "Passed - Expected -0.9880316240928618");
+    //Degree
+    clearCurrent();
+    addDigit('3');
+    addDigit('0');
+    switcher();
+    trig("sin");
+    assert.equal(document.getElementById("screen").value, "0.49999999999999994", "Passed - Expected 0.5");
 
+ });
