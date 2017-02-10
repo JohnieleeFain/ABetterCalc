@@ -102,4 +102,16 @@ QUnit.test( "Calculate a percentage", function( assert ) {
     percentage();
     assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5");
  });
-
+// Test for changing the sign of a current input
+QUnit.test( "Change the sign", function( assert ) {
+    clearCurrent();
+    addDigit('5');
+    addDigit('0');
+    changeSign();
+    assert.equal(document.getElementById("screen").value, "-50", "Passed - Expected -50");
+ });
+// Test for clearing the current input
+QUnit.test( "Clear current input", function( assert ) {
+    clearCurrent();
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0");
+ });

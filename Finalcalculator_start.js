@@ -126,7 +126,7 @@ function changeSign() {
 }
 /**
  * This functions clears the inputted numbers
- * @author Johnie Lee Fain & Jorie Allen
+ * @author Johnie lee Fain & Jorie Allen
  * @param {number}clearCurrent Clears the current input
  * @return {number} Returns and siplay the results
  * @throws
@@ -149,7 +149,7 @@ function percentage() {
 }
 /**
  * Calculate the factorial of the current input
- * @author Johnie Lee Fain
+ * @author Johnie lee Fain
  * @param {number} factorial of the number
  * @returns {number} Returnsd and displays the results
  * @throws
@@ -220,7 +220,7 @@ function trig(sign) {
 }
 /**
  * Switches the mode of the calculator
- * @author Johnie Lee Fain & Andrea Martinez
+ * @author Johnie lee Fain & Andrea Martinez
  * @param {boolean}switcher Switch to degree and Radian
  * @return {number} Returns the result
  * @throws
