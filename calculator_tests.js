@@ -13,7 +13,7 @@ QUnit.test("Add decimal test", function (assert) {
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
 //Test adding the inverse of the current input
-QUnit.test("find inverse test", function (assert) {
+QUnit.test("Calculate Inverse test", function (assert) {
     clearCurrent();
     addDigit('4')
     inverse();
@@ -93,5 +93,13 @@ QUnit.test( "Switch Calculator Mode", function( assert ) {
     switcher();
     trig("sin");
     assert.equal(document.getElementById("screen").value, "0.49999999999999994", "Passed - Expected 0.5");
-
  });
+// Test for calculating the percentage of a current input
+QUnit.test( "Calculate a percentage", function( assert ) {
+    clearCurrent();
+    addDigit('5');
+    addDigit('0');
+    percentage();
+    assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5");
+ });
+
